@@ -12,6 +12,7 @@ Patch0:		%{name}-help.patch
 URL:		http://qtemu.org/
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
+BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

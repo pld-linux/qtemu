@@ -1,3 +1,4 @@
+# TODO: optflags
 Summary:	QtEmu - a graphical interface for Qemu written in Qt4
 Summary(pl.UTF-8):	QtEmu - interfejs graficzny dla Qemu napisany w Qt4
 Name:		qtemu
@@ -17,10 +18,10 @@ BuildRequires:	qt4-qmake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-QtEmu - a graphical interface for Qemu written in Qt4
+QtEmu - a graphical interface for Qemu written in Qt4.
 
 %description -l pl.UTF-8
-QtEmu - interfejs graficzny dla Qemu napisany w Qt4
+QtEmu - interfejs graficzny dla Qemu napisany w Qt4.
 
 %prep
 %setup -q -n %{name}
@@ -35,7 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}-%{version},%{_desktopdir},%{_iconsdir}}
 install %{name} $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install images/%{name}.png $RPM_BUILD_ROOT%{_iconsdir}
+install images/%{name}.png $RPM_BUILD_ROOT%{_pixmapsdir}
 cp -Ra help $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
 
 %clean
@@ -46,4 +47,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}-%{version}
 %{_desktopdir}/%{name}.desktop
-%{_iconsdir}/%{name}.png
+%{_pixmapsdir}/%{name}.png

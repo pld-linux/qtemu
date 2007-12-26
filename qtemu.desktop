@@ -1,10 +1,10 @@
 [Desktop Entry]
 Comment=QtEmu - a graphical interface for QEmu
 Comment[pl]=QtEmu - interfejs graficzny dla QEmu
-Categories=Application;Emulator;Utility
 Exec=qtemu
 Icon=qtemu
 Name=QtEmu
 StartupNotify=true
 Terminal=false
 Type=Application
+Categories=Emulator;Utility;

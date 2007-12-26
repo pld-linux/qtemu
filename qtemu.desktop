@@ -2,9 +2,8 @@
 Comment=QtEmu - a graphical interface for QEmu
 Comment[pl]=QtEmu - interfejs graficzny dla QEmu
 Categories=Application;Emulator;Utility
-Encoding=UTF-8
 Exec=qtemu
-Icon=qtemu.png
+Icon=qtemu
 Name=QtEmu
 StartupNotify=true
 Terminal=false

@@ -13,8 +13,8 @@ Patch0:		%{name}-help.patch
 URL:		http://qtemu.org/
 BuildRequires:	QtGui-devel
 BuildRequires:	QtXml-devel
-BuildRequires:	qt4-build
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-build >= 4.3.3-3
+BuildRequires:	qt4-qmake >= 4.3.3-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,7 +28,7 @@ QtEmu - interfejs graficzny dla Qemu napisany w Qt4.
 %patch0 -p1
 
 %build
-qt4-qmake
+qmake-qt4
 %{__make}
 
 %install

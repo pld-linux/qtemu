@@ -1,13 +1,15 @@
-# TODO: optflags
+# TODO
+# - optflags
+# - use cmake based build and install translations
 Summary:	QtEmu - a graphical interface for Qemu written in Qt4
 Summary(pl.UTF-8):	QtEmu - interfejs graficzny dla Qemu napisany w Qt4
 Name:		qtemu
-Version:	1.0.3
+Version:	1.0.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/qtemu/%{name}-%{version}.tar.bz2
-# Source0-md5:	44560abe5b1df47f8ff6050d5864f453
+# Source0-md5:	3b93e209dc62e52a1d94c8eb24d0b149
 Source1:	%{name}.desktop
 Patch0:		%{name}-help.patch
 URL:		http://qtemu.org/
@@ -24,7 +26,7 @@ QtEmu - a graphical interface for Qemu written in Qt4.
 QtEmu - interfejs graficzny dla Qemu napisany w Qt4.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
 
 %build
@@ -33,11 +35,11 @@ qmake-qt4
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}-%{version},%{_desktopdir},%{_iconsdir}}
-install %{name} $RPM_BUILD_ROOT%{_bindir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install images/%{name}.png $RPM_BUILD_ROOT%{_pixmapsdir}
-cp -Ra help $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}-%{version},%{_desktopdir},%{_pixmapsdir}}
+install -p %{name} $RPM_BUILD_ROOT%{_bindir}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p images/crystal/%{name}.png $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -a help $RPM_BUILD_ROOT%{_datadir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

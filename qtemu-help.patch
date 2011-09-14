@@ -1,14 +1,13 @@
-diff -uNr qtemu.orig/helpwindow.cpp qtemu/helpwindow.cpp
---- qtemu.orig/helpwindow.cpp	2007-03-19 13:56:21.000000000 +0100
-+++ qtemu/helpwindow.cpp	2007-06-20 22:47:25.000000000 +0200
+--- qtemu-1.0.5/helpwindow.cpp~	2011-09-14 07:54:10.000000000 +0300
++++ qtemu-1.0.5/helpwindow.cpp	2011-09-14 07:54:52.911356540 +0300
 @@ -22,6 +22,7 @@
  ****************************************************************************/
  
- #include <QtGui>
+ #include "helpwindow.h"
 +#include "config.h"
  
- #include "helpwindow.h"
- 
+ #include <QFile>
+ #include <QCoreApplication>
 @@ -59,10 +60,15 @@
  {
      QSettings settings("QtEmu", "QtEmu");
